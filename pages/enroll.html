@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запис на курс — Nova Modeling</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="main-content">
+        <header>
+            <nav class="container">
+                <div class="logo">NOVA<span>.</span></div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Головна</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="enroll.html" style="color: #de1bba;">Записатись</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="container" style="padding-top: 50px;">
+            <section class="enroll-section">
+                <h1 style="font-family: 'Syne'; font-size: 50px;">Анкета <span>моделі</span></h1>
+                <p style="margin-bottom: 30px;">Заповни дані, щоб ми запросили тебе на кастинг.</p>
+                
+                <form id="enrollForm" style="display: flex; flex-direction: column; gap: 15px; max-width: 400px;">
+                    <input type="text" placeholder="Ім'я та прізвище" required style="padding: 15px; background: #e2afe2; border: 1px solid #f1c8df; color: #fff;">
+                 <input type="email" placeholder="Твій Email" required style="padding: 15px; background: #e2afe2; border: 1px solid #f1c8df; color: #fff;">
+            
+                    <button type="submit" class="btn-main" style="border: none; cursor: pointer;">Надіслати заявку</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-window">
+            <h3>Дякуємо!</h3>
+            <p>Вашу заяву буде розглянуто в найближчий час.</p>
+            <button id="closeModal" class="btn-main" style="padding: 10px 30px; margin-top: 20px; border: none; cursor: pointer;">OK</button>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('enrollForm');
+        const modal = document.getElementById('modalOverlay');
+        const closeBtn = document.getElementById('closeModal');
+        const mainContent = document.getElementById('main-content');
+
+        // Показуємо вікно при натисканні
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Щоб сторінка не перезавантажилася
+            modal.classList.add('active');
+            mainContent.classList.add('blurred');
+        });
+
+        // Закриваємо вікно
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('active');
+            mainContent.classList.remove('blurred');
+            form.reset(); // Очищуємо форму
+        });
+    </script>
+</body>
+</html>

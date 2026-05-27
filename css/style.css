@@ -1,0 +1,238 @@
+/* =========================================
+   1. БАЗОВІ НАЛАШТУВАННЯ ТА ШРИФТИ
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #cc5088; /* Темний фон */
+    color: #ffe0f7;
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: filter 0.3s ease; /* Для плавного розмиття */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   2. ШАПКА САЙТУ (HEADER)
+   ========================================= */
+header {
+    padding: 25px 0;
+    border-bottom: 1px solid #64234f;
+    background-color: rgba(83, 25, 70, 0.9);
+    background-color: gba(88, 27, 65, 0.9);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #713471; /* Рожевий акцент */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: #fbe8f3;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fc4abe;
+}
+
+/* =========================================
+   3. ГОЛОВНИЙ ЕКРАН (HERO)
+   ========================================= */
+.hero {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(50px, 10vw, 100px);
+    line-height: 0.9;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero h1 span {
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+}
+
+.btn-main {
+    display: inline-block;
+    background-color: #ea429b;
+    color: #fff;
+    padding: 18px 45px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    background-color: #ec2bb2;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   4. ГАЛЕРЕЯ ТА КАРТКИ МОДЕЛЕЙ
+   ========================================= */
+.gallery-section { padding: 80px 0; text-align: center; }
+
+.model-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.model-card {
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    background: #c46eb8;
+    background: #c46eb8;
+    border: 1px solid ;
+}
+
+.model-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.model-card:hover img {
+    transform: scale(1.1);
+}
+
+.model-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(231, 32, 182, 0.9);
+    padding: 6px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   5. ПЕРЕВАГИ КЛУБУ
+   ========================================= */
+.club-benefits {
+    padding: 100px 40px;
+    background: #4e113c;
+    margin: 80px 0;
+    border-radius: 4px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.benefit-item h3 {
+    color: #ff00b3;
+    font-family: 'Syne';
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.benefit-item p {
+    color: #987a8b;
+}
+
+/* =========================================
+   6. МОДАЛЬНЕ ВІКНО ТА ЕФЕКТИ
+   ========================================= */
+
+/* Ефект розмиття фону */
+.blurred {
+    filter: blur(10px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(54, 16, 48, 0.8);
+    display: none; /* Сховано за замовчуванням */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-window {
+    background: #e48dc9;
+    padding: 50px;
+    border: 2px solid #df3cda;
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 0 40px rgba(244, 140, 207, 0.4);
+}
+
+.modal-window h3 {
+    font-family: 'Syne';
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #fbeaf6;
+}
+
+/* =========================================
+   7. АДАПТИВНІСТЬ
+   ========================================= */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 55px; }
+    .club-benefits { padding: 60px 20px; }
+}

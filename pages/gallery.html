@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея 2026 — Nova Modeling</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Додаткові стилі саме для цієї сторінки */
+        .model-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Щоб фото не розтягувалося, а красиво заповнювало блок */
+            transition: transform 0.5s ease;
+        }
+        .model-card:hover img {
+            transform: scale(1.05); /* Ефект збільшення при наведенні */
+        }
+        .model-card {
+            overflow: hidden;
+            position: relative;
+        }
+        .model-info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 0, 217, 0.8);
+            padding: 5px 15px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">NOVA<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Головна</a></li>
+                <li><a href="gallery.html" style="color: #ff00bb;">Галерея</a></li>
+                <li><a href="enroll.html">Записатись</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="gallery-section">
+            <h1>Тренди <span>2026</span></h1>
+            <p style="color: #805570; margin-bottom: 40px;">Обличчя, які змінюють індустрію моди цього сезону.</p>
+            
+            <div class="model-grid">
+                <div class="model-card">
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=600" alt="Model 1">
+                    <div class="model-info">Vogue Edition</div>
+                </div>
+
+                <div class="model-card">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600" alt="Model 2">
+                    <div class="model-info">Street Style 2026</div>
+                </div>
+
+                <div class="model-card">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600" alt="Model 3">
+                    <div class="model-info">Nova Agency Top</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="club-benefits">
+            <h2>Що дає членство в <span>Nova Club</span>?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>01. Професійний бук</h3>
+                    <p>Повне портфоліо від найкращих фотографів країни безкоштовно для наших резидентів.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>02. Прямі кастинги</h3>
+                    <p>Доступ до закритих кастингів світових брендів у Парижі та Мілані через нашу мережу.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>03. Ком'юніті</h3>
+                    <p>Закриті заходи, лекції від діючих моделей та підтримка 24/7 у нашому чаті.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 40px; color: #d177b5; font-size: 12px; letter-spacing: 2px;">
+        &copy; 2026 NOVA MODELING MANAGEMENT
+    </footer>
+</body>
+</html>
